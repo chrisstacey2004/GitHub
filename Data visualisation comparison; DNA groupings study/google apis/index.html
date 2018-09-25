@@ -20,6 +20,8 @@
       //var marker = new google.maps.Marker({position: london, map: map});
       map.data.loadGeoJson(
           'https://opendata.arcgis.com/datasets/c362832ce5d14728a6fb2b079525be0b_4.geojson');
+		    map.data.loadGeoJson(
+		  'https://api.myjson.com/bins/yidpw');//added second overlay
       map.data.setStyle({
               fillColor: 'green',
               strokeWeight: 0.5
