@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Google Multiple Custom Markers</title>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4YBafrzh_JQd2DyY0_fgw19cfwwLOA8Q&callback=initMap", type="text/javascript"></script>
+    <link href="css.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+	   <div class="topnav">
+		<a class="active" href='../index.html'>Home</a>
+		<a href="../markerstrial/index.html">0-110ad Settlers in the UK</a></a>
+		<a href='../ukpopbarchart.html'>UK Population over History 43ad to 2017</a>
+		<a href='../viz2.html'>Europe Population Today</a>
+		<a href='../tablejsondata.html'>Table of Modern Haplogroups Europe</a>
+		<a href='../csvgraph.html'>World Populations Pie Chart</a>
+		<a href="https://datawrapper.dwcdn.net/a3tnj/2/">Countries involved in Haplogroup Study</a>
+		<a href="https://datawrapper.dwcdn.net/eBR0q/2/">UK Haplogroup, most common Haplogroup R1B</a>
+		<a href="https://datawrapper.dwcdn.net/wdlkC/3/">Countries Haplogroup Q</a>
+		<a href="https://datawrapper.dwcdn.net/3hIfN/3/">Countries Haplogroup N</a>
+		<a href="https://datawrapper.dwcdn.net/NvpzV/2/">Countries Haplogroup l1</a>
+		<a href="https://datawrapper.dwcdn.net/MmMqf/2/">Countries Haplogroup l2l2a</a>
+		<a href="https://datawrapper.dwcdn.net/RKZEt/2/">Countries Haplogroup l2b</a>
+		<a href="https://datawrapper.dwcdn.net/svq3J/1/">Countries Haplogroup r1a</a>
+		<a href="https://datawrapper.dwcdn.net/67Hbd/1/">Countries Haplogroup r1b</a>
+		<a href="https://datawrapper.dwcdn.net/ZnD9Z/2/">Countries Haplogroup G</a>
+		<a href="https://datawrapper.dwcdn.net/Ty3LH/2/">Countries Haplogroup J2</a>
+		<a href="https://datawrapper.dwcdn.net/lOkmQ/1/">Countries Haplogroup JJ1</a>
+		<a href="https://datawrapper.dwcdn.net/YO4ow/1/">Countries Haplogroup E1B1</a>
+		<a href="https://datawrapper.dwcdn.net/rxmWv/1/">Countries Haplogroup T</a>
+
+	</div>
+	<div class="center">
+		<h2><u>"The Old Countries" Tribes 0-1100 ad Settlers, UK</u></h2>
+		<p><u>This page is dedicated to finding out in more details what the data maps from the Home page are pointing to through DNA lineage studies.</u></p>
+	</div>
+
+	
+</head>
+
+<body>
+	<div style="padding-left:350px">
+ <a href="ukeuropednamap.html" class="myButton">Northern Europe/UK DNA Map</a><a>>>>A more thorough look at the UK DNA heritage from a comprehensive study acheived in 2015 by Duke University.</a><br>
+ <a href="https://norse-mythology.org/wp-content/uploads/2017/03/Viking-Expansions.png" class="myButton">Viking Settlements in the UK and Europe 8th to 11th Century ad</a><a>>>> Source Link https://norse-mythology.org/wp-content/uploads/2017/03/Viking-Expansions.png </a><br>
+ <a href="https://www.deviantart.com/arminius1871/art/Anglo-Saxon-migration-493514888" class="myButton">Germanic Tribes Settlements in the UK and Europe 550 ad to 8th Century ad</a><a>>>> Source Link https://www.deviantart.com/arminius1871/art/Anglo-Saxon-migration-493514888 </a><br>
+	</div>
+	
+    <div style="padding-left:350px">
+ <br><p style="color:blue;font-size:20px;">Legend of the Coloured Polygons:</p>
+   
+<span class="label North">The Lands of The Scottish Celts and Picts</span>
+<span class="label2 Ireland">The Lands of The Irish Celts</span>
+<span class="label Westengland">The lands of The Britons</span>
+<span class="label Eastengland">The Lands of The Vikings, Jutes, Frisians, Angles, Saxons and Normans</span>
+    </div>
+	
+  	<div id="map"></div>
+	<script>
+	var locations = [
+	['<h3>The Saxons</h3><h4>Saxon: name meaning: those who dwelt in Saxony, or haled from Saxony. Modern day Germany</h4><a href="http://www.bbc.co.uk/guides/z23br82">Source Link to The BBC<a><br>' +
+	'<a href="https://www.theguardian.com/science/2015/mar/18/genetic-study-30-percent-white-british-dna-german-ancestry">Source Link to The Guardian<a><br>' + 
+	'<a href="https://www.britannica.com/topic/Saxon-people">Source Link to Britannia<a>' +
+	'<p>Saxon Peoples Started to Rapidly Expand to Gaul and Britian After The decline of the Roman Empire.</p>' +
+	'<p>This Expansion North and West into Southern England happened Between 400-700ad.</p>' +
+    '<p>It Was Also the Same Time the Angles Headed East into East Anglia (and also south and aouth eastern England) and Later Forged the Largest Pact in England, Thus Becoming the Anglo-Saxons.</p>' +
+	'<p>Because of the Earliest Historian Called Bede, he Failed to Seperate the Two Entities (and also the Frisians and Jutes) thus English History Is Generaly Made up of the Anglo-Saxons and Vikings.</p>',
+		51.227474,
+		0.428064, 1, './saxons.png'],
+	['<h3>The Irish Celts</h3><h4>Irish Celts: Name meaning: Ireland is called Eire meaning ireland in English. Irish can be declared as Someone or something that comes or hales from Ireland</h4><a href="http://www.wesleyjohnston.com/users/ireland/past/pre_norman_history/vikings.html">Source Wesley Johnston<a><br><p>The Romans thought about conquering Ireland but it just became a dream and it never happened.</p>' +
+	'<p>Lindesfarne in England was attacked by the Vikings from Norway in 793, but it was only 2 years later that the Vikings attacked Ireland in 795 at the Rathlin monastery.</p>' +
+	'<p>The Vikings performed a lot of hit and run raids until around 830 ad in Ireland attacking small holdings. The aim of the attacks was to capture both slaves and riches.</p>' +
+	'<p>The Vikings ended up bringing larger groups of raiders upto 100 boats at any one time and instead of hit and runs they bought provisions to hit and then set up camp. Pillaging further in land. </p>' +
+	'<p>The Irish were too low on mumbers and to far set apart to launch counter-attacks or much defence.</p>' +
+	'<p>The raids continued until the 11th century around this time the clans of Ireland started to unite and produce ' +
+	'more heavily fortified areas with more sizeable garrisoned forces. The Vikings focused more on England and the ' +
+	'Pillaging of Ireland dropped off the menu.</P>',
+	   52.961596, 
+		-8.003806, 2, './irishceltic.png'],
+	['<h3>The Scottish Celts</h3><h4>Scotti: Name meaning: Those who dwelt in Scotti, the land of the land to the West of the Grampians</h4><a href="https://en.wikipedia.org/wiki/Scoti">Source Link to Wikpedia Scotti<a><br>' + 
+	'<a href="https://archive.archaeology.org/0107/abstracts/scotland.html">Source Link to Archaeology<a>' + 
+	'<p>Upto the end of the 400s ad, there had emerged a Kingdom called Dál Riata which emerged on the West side of the Grampians.</p>' + 
+	'<p>This was evetually devoured by Pictland, changing the culture and language of the Picts as a result.</p>' + 
+	'<p>The Picitish Kingdom became more Goidelic speaking. For this reason the more familiar names Scot, Scottish and Scotland appeared.</p> ' +
+	'<p>For more information please see the info window on Picts.</p>',
+		56.108803,
+		-5.128669, 3, './scottishcelticcross.png'],
+	['<h3>The Scottish Picts</h3><h4>Picts: Name meaning: Those Who came from Pict, the East side of the Scottish Grampians</h4><a href="http://www.bbc.co.uk/scotland/education/sysm/scots/teachers/background.shtml">Source Link to BBC Scotland Education<a><br><p>The Picts have few written records mainly records were from Roman sources, even though the Romans failed to conquer them. But they were often attacked by the Britons. They were a matrilineal society. </p>' + 
+	'<p>Records show that the Picts survived as a distinct peoples until the 900s ad. But there is no records of them leaving or being wiped out. It is likley they intermingled with Scot Celts (Scotti), Britons and Angles. Forming a multi-ethnic Scotland.</p>' +
+	'<p>The Vikings in late 8th Century and early 9th Century started to infringe on the Pictish lands from the Hebrides to the Eastern side of Pictland. The Vikings most probably almost destroyed the Pictish leadership and Kingship. Most of the Scotti came under the what was remaining of the Pictish leadership. This was because they too were being overwhelmed by mulitple tribes. A new king called McAlpine was chosen as head of the tribes, he was a Pictish warlord. </p>' + 
+	'<p>The Vikings encroached so much onto Pictish lands that they were forced to intermarry with the Vikings. The Vikings then claimed more land. McAlpine then uniting the Scotti, Picts and Vikings who then battled the Britons. </p>' + 
+	'<p>They established the Christian Church after visits from St Columbus, and McAlpine became the first true King of Scotland</p>',
+		57.027714,
+		-3.217673, 4, './scottishpics.png'],
+	['<h3>The Angles</h3><h4>Angle: Name meaning: Those who dwelt in Angeln or who haled from Angeln, southwest Jutland. Modern day Northern German tip/Southern Denmark</h4><a href="https://www.britannica.com/topic/Angle-people">Source Link to Britannica<a><br><a href="https://www.historic-uk.com/HistoryUK/HistoryofBritain/Invaders/">Source Historic-UK<a><br><p>The name for England came from the Angles, with the common name Englisc even used by the Saxons to describe the new native dictionary ' +
+	'as with the Saxon example the Angles arrived between 400-700 ad.</p><p>They settled what eventually became the areas of Mercia, Northumbia and East Anglia and Mid Anglia.</p><p>Though the Angles Settled along the South coast and also the North East coast of England their settlements were mostly confined to the South and South East coast as the Vikings came in the next period and settled large swaythes of North and North East England.</p>' +
+	'<p>As documented on a BBC documentary, there is a community in North West and North East England who still speak a mixture of Nordic and Saxon.</p>',
+		51.740229,
+		-0.973605, 5, './anglosaxon.png'],
+    ['<h3>The Vikings</h3><h4>Viking: Name meaning: In old Norse the meaning of "Vik" was creek and in old English "Wic" meaning camp or dwelling place. In symantics adding the "ing" to either of those means person of the creek or person of a camp or dwelling place. later on as English language developed it meant "Pirate".</h4><a href="https://www.google.com/search?ei=yrPAW_KdJaXPgAbKyImQCQ&q=what+does+viking+mean&oq=what+does+viking+mean&gs_l=psy-ab.3..0l3j0i22i30k1l7.4229.7354.0.7601.21.20.0.1.1.0.158.2004.12j8.20.0....0...1c.1.64.psy-ab..0.21.1982...35i39k1j0i67k1j0i131i67k1j0i131k1j0i3k1j0i20i263k1.0.ooNgycdFr-Y">Source Link to google dictionary<a><br>' +
+	'<a href="http://www.primaryhomeworkhelp.co.uk/viking/when.html">Source Link to BBC Scotland Education<a><br>' +
+	'<a href="http://www.viking.no/e/england/danelaw/">Source Link to Viking.no : When Half of England was Viking<a>' +
+	'<p>Vikings arrived in British Isles with the raiding and sacking of lindisfarne in 793 ad. The Vikings haled from Norway and What is now Denmark with a few raids from Sweden.</p>' +
+	'<p>The Vikings in late 8th Century and early 9th Century started to infringe on the Pictish lands from the Hebrides to the Eastern side of Pictland.</p>' + 
+	'<p>The Vikings encroached so much onto Pictish lands that they were forced to intermarry with the Vikings. The Vikings then claimed more land. McAlpine then uniting the Scotti, Picts and Vikings who then battled the Britons. </p>' + 
+	'<p>The Vikings attacked Ireland for first time in 795 attacking a monastery.</p>' +
+	'<p>The Vikings eventually took alot of the Angle, Saxon and Britons land from the North East of England down to nearly all of East Anglia; England was half Viking. The created what was called the Danelaw. A very famous law encomapssing a lot of Norse rule and laws mixed with local laws at the time.</p>' +
+	'<p>When the Vikings gradually left after most of the now long time English settlers now made of Kingdoms in England, pushed out the Vikings for their insecent raiding and battles, the last time the Vikings tried to invade was defeated in 1066 shortly before the Normans (or Norsemen) from Northern France (settled Vikings) accompanied by Celtic tribes, invaded Pevernsey outisde of Hastings.</p>',
+		53.001525,
+		-0.177762, 6, './viking.png'],
+    ['<h3>The Jutes</h3><h4>Jutes: Name meaning: Those who haled from Jutland (Modern day Denamrk/North Germany)</h4><a href="https://www.britannica.com/topic/Jute-people">Source Link to Britannica<a><br><a href="http://www.bbc.co.uk/legacies/immig_emig/england/kent/article_1.shtml">Source BBC Legacies<a><br>' +
+	'<p>The Jutes were a Germanic people who came from a more northern place in Germany and Southern Denmark than the Angles and Saxons.</p>' + 
+	'<p>There is virtually no written records of the Jutes, but they are mentioned in other tribes history.</p>' +
+	'<p>But it is noted that they started to settle in britian around the 5th Century.</p>' + 
+	'<p>Evidence of the Jutes from the Venerable Bede is written as follows:“These warriors also received from the Britons grants of land where they could settle among them on condition that they maintained the peace and security of the island against all enemies in return for regular pay. These new-comers were from the three most formidable races of Germany, the Saxons, Angles and Jutes. From the Jutes are descended the people of Kent and the Isle of Wight and those in the province of the West Saxons opposite the Isle of Wight who are called Jutes to this day.” - Venerable Bede (translated by Leo Sherley-Price)</p>',
+		51.193055,
+		-1.880946, 7, './jutes.png'],
+	['<h3>The Frisians</h3><h4>Frisian: Name meaning: A native inhabitant of Friesland or Frisia. From Old Germania. The language is only spoken by 40,000 people.</h4><a href="http://www.wilcuma.org.uk/who-are-the-anglo-saxons/the-frisians/">Source Link to wilcuma<a><br>' + 
+	'<a href="https://www.google.com/search?q=friosian+mean+ing&oq=friosian+mean+ing&aqs=chrome..69i57.2247j0j8&sourceid=chrome&ie=UTF-8">Source Google Dictionary<a><br>' +
+	'<p>The Jutes history is very undocumented, but the histroian Propcopius noted " three very populous nations occupied Britain – the Angles, the Britons, and the Frisians. Their migration across the North Sea certainly began at an early date. By the middle of the sixth century there were scattered colonies of Angles and Frisians occupying districts of the east coast of Britain from the Tees to the Forth, and the kingdom of Bernicia was formed by Ida, the capital, Bamburgh, being placed on a headland not far from the Tweed. The selection of such a site for the seat of government of a kingdom founded by a maritime people was characteristic. The Frisian country itself was a coast country, not extending far inland beyond easy access to and from the sea. It was natural, therefore, that the new settlements which such a people founded should be grouped so as to reproduce as much as possible facilities for communication similar to those to which they were accustomed. Their communications were kept up mainly by the sea, and the position of Bamburgh, as the seat of government for the settlers along the coast, points to this as well as to the site being chosen for defence. These were not the earliest of their race that came to Britain, and probably not the earliest settlers, for in the later Roman period we have a record of some colonies of Frisians and other German tribes introduced for military purposes.".</p>',
+		51.320124,
+		1.225222, 8, './frisianhorse.png'],
+	['<h3>The Britons (Welsh Celts)</h3><h4>Briton: Name meaning: originally subscribed to the Welsh, Cornish and Bretons.</h4><a href="https://en.wikipedia.org/wiki/Celtic_Britons">Source Link to Wikipedia<a><br>' + 
+	'<a href="https://www.historic-uk.com/HistoryUK/HistoryofBritain/Invaders/">Source Historic-UK<a><br>' +
+	'<p>The Britons were of a Celtic genus, but genetically disinct from the other Celtic tribes of Ireland and Scotland <a href="https://en.wikipedia.org/wiki/Genetic_history_of_the_British_Isles">Source Link to Wikipedia, Genetic History of the British Isles<a></p>' +
+	'<p>Once the Germanic and Nordic tribes had moved and by the end of the 11th Century the Britons had been pushed into Wales, Cornwall and Devon area.</p>' +
+	'<p>In the 9th Century the works of the "History of the Britains" was written. This included the tales of the Germanic tribes, their struggles with the Britons and the rise of the tale of King Arthur. Another famous Briton and much talked about by the Romans during their British invasion was Boudica, she lived in East Anglia but documents the fact that the Britons were as far over as the sea around East Anglia.</p>',
+		51.817944,
+		-3.612830, 9, './welshcelts.png'],
+	['<h3>The Normans</h3><h4>Normans: Name meaning: Those men who cometh from the North (Viking King Rollos decendents.)</h4><a href="https://www.britannica.com/topic/Norman-people">Source Link to Britannica<a><br><a href="https://www.historic-uk.com/HistoryUK/HistoryofBritain/Invaders/">Source Historic-UK<a><br>' + 
+	'<p>The Normans were originally Nordic pirates that made plundering raids into Northern European countries, around the 8th Century. In the 900s ad they made vast in roads to Frankish cities.</p> ' +
+	'<p>Viking Rollo who had a good personaility and was well known pressured the Franks, so much that the Frankish King Charles III made a treaty with Rollo and gave him the land around the Seine in now what is France.They became so aggressive that they gained Normandy.</p>' +
+	'<p>Rollo decendant William, Duke of Normandy expanded his military campaigns and in 1066 invaded England. Englands country administration was more like what you see today and after defeating the last Viking invasion just prior, King Harold II was defeated and William known as the Conqueror took control of England.</p>'+
+	'<p>This was the last successful invasion of England and the UK.</p>',
+	50.811552,
+		0.349284, 10, './normans.png']	
+];
+
+ 
+var map = new google.maps.Map(document.getElementById('map'), {
+	zoom: 4.5,
+	center: new google.maps.LatLng(51.5074, -5),
+	mapTypeId: google.maps.MapTypeId.HYBRID
+});
+var infowindow = new google.maps.InfoWindow();
+
+var marker, i;
+for (i = 0; i < locations.length; i++) {
+	marker = new google.maps.Marker({
+		position: new google.maps.LatLng(locations[i][1], locations[i][2], locations[i][3], locations[i][4], locations[i][5], locations[i][6], locations[i][7], locations[i][8], locations[i][9], locations[i][10]),
+		icon: locations[i][4],
+		map: map
+	});
+	google.maps.event.addListener(marker, 'click', (function (marker, i) {
+		return function () {
+			infowindow.setContent(locations[i][0]);
+			infowindow.open(map, marker);
+
+		}
+	
+	})(marker, i));
+	
+
+	
+	var polygonCoords = [
+          
+		  {lat: 54.535169, lng: -5.263351},
+		  {lat: 54.783121, lng: -3.717517},
+          {lat: 51.5000, lng: -2.5},
+          {lat: 50.263401, lng: -1.630145},
+          {lat: 49.864802, lng: -6.404163}
+        ];
+
+        // Construct the polygon.
+        var welshceltsPolygon = new google.maps.Polygon({
+          paths: polygonCoords,
+          strokeColor: 'black',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: null,
+          fillOpacity: 0.01
+        });
+        welshceltsPolygon.setMap(map);
+		
+		var polygonCoords2 = [
+          {lat: 55.797070, lng: -2.055389},
+		  {lat: 54.742153, lng: -3.865460},
+		  {lat: 51.5000, lng: -2.5},
+		  {lat: 50.263401, lng: -1.630145},
+		   {lat: 50.784371, lng: 1.517984},
+          {lat: 52.667485, lng: 1.828174}
+		 ];
+
+        // Construct the polygon.
+        var neastcentralsoutheastQuad = new google.maps.Polygon({
+          paths: polygonCoords2,
+          strokeColor: 'red',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: null,
+          fillOpacity: 0.01
+        });
+        neastcentralsoutheastQuad.setMap(map);
+		
+		var polygon3Coords = [
+          {lat: 61.107325, lng:  -0.788531},
+		  {lat: 57.775795, lng: -8.639216},
+		  {lat: 54.349739, lng: -4.760939},
+		  {lat: 56.418943, lng: 0.029783}
+		 ];
+
+        // Construct the polygon.
+        var scotcelticpictsQuad = new google.maps.Polygon({
+          paths: polygon3Coords,
+          strokeColor: 'magenta',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: null,
+          fillOpacity: 0.01
+        });
+        scotcelticpictsQuad.setMap(map);
+		
+		var polygon4Coords = [
+          {lat: 57.775795, lng: -8.639216},
+		  {lat: 51.672539, lng: -13.287097},
+		  {lat: 49.881434, lng: -6.483364},
+		  {lat: 54.565729, lng: -4.930461}
+		 ];
+
+        // Construct the polygon.
+        var irishceltsQuad = new google.maps.Polygon({
+          paths: polygon4Coords,
+          strokeColor: 'yellow',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: null,
+          fillOpacity: 0.01
+        });
+        irishceltsQuad.setMap(map);
+	
+}
+</script>
+
+</body>
+
+</html>

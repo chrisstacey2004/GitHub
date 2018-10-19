@@ -1,0 +1,67 @@
+ <html>
+  <head>
+	<link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<div class="topnav">
+		<a class="active" href='./index.html'>Home</a>
+		<a href='ydna.html'>Y-DNA and Haplogroups</a>
+		<a href="./markerstrial/index.html">0-110ad Settlers in the UK</a></a>
+		<a href='./ukpopbarchart.html'>UK Population over History 43ad to 2017</a>
+		<a href='./viz2.html'>Europe Population Today</a>
+		<a href='./tablejsondata.html'>Table of Modern Haplogroups Europe</a>
+		<a href='./csvgraph.html'>World Populations Pie Chart</a>
+		<a href="https://datawrapper.dwcdn.net/a3tnj/2/">Countries involved in Haplogroup Study</a>
+		<a href="https://datawrapper.dwcdn.net/eBR0q/2/">UK Haplogroup, most common Haplogroup R1B</a>
+		<a href="https://datawrapper.dwcdn.net/wdlkC/3/">Countries Haplogroup Q</a>
+		<a href="https://datawrapper.dwcdn.net/3hIfN/3/">Countries Haplogroup N</a>
+		<a href="https://datawrapper.dwcdn.net/NvpzV/2/">Countries Haplogroup l1</a>
+		<a href="https://datawrapper.dwcdn.net/MmMqf/2/">Countries Haplogroup l2l2a</a>
+		<a href="https://datawrapper.dwcdn.net/RKZEt/2/">Countries Haplogroup l2b</a>
+		<a href="https://datawrapper.dwcdn.net/svq3J/1/">Countries Haplogroup r1a</a>
+		<a href="https://datawrapper.dwcdn.net/67Hbd/1/">Countries Haplogroup r1b</a>
+		<a href="https://datawrapper.dwcdn.net/ZnD9Z/2/">Countries Haplogroup G</a>
+		<a href="https://datawrapper.dwcdn.net/Ty3LH/2/">Countries Haplogroup J2</a>
+		<a href="https://datawrapper.dwcdn.net/lOkmQ/1/">Countries Haplogroup JJ1</a>
+		<a href="https://datawrapper.dwcdn.net/YO4ow/1/">Countries Haplogroup E1B1</a>
+		<a href="https://datawrapper.dwcdn.net/rxmWv/1/">Countries Haplogroup T</a>
+
+	</div>
+	
+		</div>
+
+	<div class="center">
+		<h2><u>European Population After Last UK Settlements</u></h2>
+		<h3><u>Map Of Countries Related to UK/European Settlements post 1100 ad</u></h3>
+		
+	</div>
+	
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+	 
+	
+	
+      google.charts.load('current', {
+        'packages':['geochart'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyD4YBafrzh_JQd2DyY0_fgw19cfwwLOA8Q'
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+    
+
+        var options = {};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="regions_div" style="width: 100%; height: 100%";></div>
+	</body>
+</html>

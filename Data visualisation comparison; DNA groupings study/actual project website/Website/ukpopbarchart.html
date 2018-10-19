@@ -1,0 +1,83 @@
+<html>
+  <head>
+  
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Google Maps APIs using DNA</title>
+    
+	
+	
+
+	<link href="style.css" rel="stylesheet">
+	
+    <div class="topnav">
+		<a class="active" href="index.html">Home</a>
+		<a href='ydna.html'>Y-DNA and Haplogroups</a>
+		<a href='./markerstrial/index.html'>0-110 ad Settlers in the UK</a>
+		<a href='ukpopbarchart.html'>UK Population over History 43ad to 2017</a>
+		<a href='viz2.html'>Europe Population Today</a>
+		<a href='tablejsondata.html'>Table of Modern Haplogroups Europe</a>
+		<a href='csvgraph.html'>World Populations Pie Chart</a>
+		<a href="https://datawrapper.dwcdn.net/a3tnj/2/">Countries involved in Haplogroup Study</a>
+		<a href="https://datawrapper.dwcdn.net/eBR0q/2/">UK Haplogroup, most common Haplogroup R1B</a>
+		<a href="https://datawrapper.dwcdn.net/wdlkC/3/">Countries Haplogroup Q</a>
+		<a href="https://datawrapper.dwcdn.net/3hIfN/3/">Countries Haplogroup N</a>
+		<a href="https://datawrapper.dwcdn.net/NvpzV/2/">Countries Haplogroup l1</a>
+		<a href="https://datawrapper.dwcdn.net/MmMqf/2/">Countries Haplogroup l2l2a</a>
+		<a href="https://datawrapper.dwcdn.net/RKZEt/2/">Countries Haplogroup l2b</a>
+		<a href="https://datawrapper.dwcdn.net/svq3J/1/">Countries Haplogroup r1a</a>
+		<a href="https://datawrapper.dwcdn.net/67Hbd/1/">Countries Haplogroup r1b</a>
+		<a href="https://datawrapper.dwcdn.net/ZnD9Z/2/">Countries Haplogroup G</a>
+		<a href="https://datawrapper.dwcdn.net/Ty3LH/2/">Countries Haplogroup J2</a>
+		<a href="https://datawrapper.dwcdn.net/lOkmQ/1/">Countries Haplogroup JJ1</a>
+		<a href="https://datawrapper.dwcdn.net/YO4ow/1/">Countries Haplogroup E1B1</a>
+		<a href="https://datawrapper.dwcdn.net/rxmWv/1/">Countries Haplogroup T</a>
+		
+	</div>
+
+	<div class="center">
+		<h2><u>Population of England, Wales, Scotland and N.Ireland</u></h2>
+		<h3><u>Bar Chart of Populations of the UK</u></h3>
+		<p>Sometimes the records show England and Wales, sometimes records show England, Wales separatly. Most of the records before the later Census's on population from 1801 will show the counties indivdually anything before 1801 will show the countries as England and Wales. N.Ireland did not officially become part of the UK until 1922, therefore many census's before then would not show the seperate populations from Ireland and therefore may not appear on census's for the UK before then. There are little estimates of Scottish population over the ages, we know from Roman estimates and also the Catholic Priests in Scotland of some very early population numbers. Because of the Norman efficency documents were readly produced for nearly all aspects of life like the Romans. This included population estimates. The Black Death caused a huge decrease in population numbers, not just in the UK but also in Europe. Couple that with much migration away from the UK over many periods in History the numbers changed drastically, making documentation harder as there was obviously no formal way of tracking peoples movements.</p>
+		<p>Source - ONS, https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/bulletins/annualmidyearpopulationestimates/mid2017</p>
+	    <p>Source - Histpop. Histpop - The Online Historical Population Reports Website - http://www.histpop.org/ohpr/servlet/PageBrowser?path=Browse/Census%20(by%20date)/1811&active=yes&titlepos=1&mno=5&pageseq=542</p>
+		<p>Source - English Population 1086, Census taken of nearly all of England via the Domsday book (some cities omitted at the time).Source, http://www.domesdaybook.co.uk/life.html#6</p>
+		<p>Source - https://en.wikipedia.org/wiki/Demographic_history_of_Scotland</p>
+		<p>Source - Older History of the UK Populationhttp://www.localhistories.org/population.html</p>
+	</div>
+		
+</head>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'England (Sometimes England and Wales)', 'Wales (Sometimes England and Wales)', 'Scotland', 'N.Ireland (also Ireland)'],
+          ['43', 1750000, null, 110000, 500000],
+		  ['1086', 1750000, null, null, null],
+		  ['1400s', 2500000, null, null, null],
+          ['1600s', 5500000, null, 1000000, 1200000],
+          ['1811', 9538827, 611788, 1805688, null],
+          ['2017', 55619400, 3125200, 5424800, 1870800]
+        ]);
+
+        var options = {
+          chart: {
+            title: '"Hover Over" Bar Chart of UK Population',
+            subtitle: '43ad to 2017ad',
+          },
+          bars: 'horizontal' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+  </head>
+  <body>
+    <div id="barchart_material" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
