@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>UK Ethnicity</title>
+	</head>
+	<body>	
+		<div class="topnav">
+		<a class="active" href='./index.html'>Home</a>
+		<a href='ydna.html'>Y-DNA and Haplogroups</a>
+		<a href='ukr1haplogroup.html'>Bar Chart of R1b most common Haplogroup UK</a>
+		<a href="./markerstrial/index.html">0-110ad Settlers in the UK</a>
+		<a href='./ukpopbarchart.html'>UK Population over History 43ad to 2017</a>
+		<a href='./ukethnicity.html'>UK Ethnicity Modern Day</a>
+		<a href='./viz2.html'>Europe Population Today</a>
+		<a href='./tablejsondata.html'>Table of Modern Haplogroups Europe</a>
+		<a href='./csvgraph.html'>World Populations Pie Chart</a>
+		<a href="https://datawrapper.dwcdn.net/a3tnj/2/">Countries involved in Haplogroup Study</a>
+		<a href="https://datawrapper.dwcdn.net/eBR0q/2/">UK Haplogroup, most common Haplogroup R1B</a>
+		<a href="https://datawrapper.dwcdn.net/wdlkC/3/">Countries Haplogroup Q</a>
+		<a href="https://datawrapper.dwcdn.net/3hIfN/3/">Countries Haplogroup N</a>
+		<a href="https://datawrapper.dwcdn.net/NvpzV/2/">Countries Haplogroup l1</a>
+		<a href="https://datawrapper.dwcdn.net/MmMqf/2/">Countries Haplogroup l2l2a</a>
+		<a href="https://datawrapper.dwcdn.net/RKZEt/2/">Countries Haplogroup l2b</a>
+		<a href="https://datawrapper.dwcdn.net/svq3J/1/">Countries Haplogroup r1a</a>
+		<a href="https://datawrapper.dwcdn.net/67Hbd/1/">Countries Haplogroup r1b</a>
+		<a href="https://datawrapper.dwcdn.net/ZnD9Z/2/">Countries Haplogroup G</a>
+		<a href="https://datawrapper.dwcdn.net/Ty3LH/2/">Countries Haplogroup J2</a>
+		<a href="https://datawrapper.dwcdn.net/lOkmQ/1/">Countries Haplogroup JJ1</a>
+		<a href="https://datawrapper.dwcdn.net/YO4ow/1/">Countries Haplogroup E1B1</a>
+		<a href="https://datawrapper.dwcdn.net/rxmWv/1/">Countries Haplogroup T</a>
+	</div>
+	
+	<div class="center">
+	<h2><u>England, Wales and Scotland Ethnicity 2011</u></h2>
+	<p>This page shows in interactive chart form the population ethnicities from the 2011 censuses.</p>
+	<p>The percentages of the populations are shown on the charts below. Please note there is no distinction on the census of Scotland between "white" and "Scottish white".'</p>
+	<p>Although Ethnicity does not necessarily show a Haplogroup link because it is goes on a best fit or best guess within the censuses there is a high probability that if persons in the census had a DNA test on the Y-DNA there would be strong reason to suspect that a persons ethnicity is linked to a regional Haplogroup. But stating a ethnicity does not nessecrily mean that persons DNA comes from a single point of origin. </p>
+	</div>
+	
+	<link href="css/style.css" rel="stylesheet">
+	
+	<div id="England_and_Wales" style="width:100%; height:340px;"></div>
+	<div id="Scotland" style="width:100%; height: 500px;"></div>
+	<div id="nireland" style="width:100%; height: 1000px;"></div>
+	
+    <script src="https://www.google.com/jsapi"></script>
+    <script>
+         google.load('visualization', '1', {packages: ['corechart', 'bar']});
+    google.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+	    var data1 = google.visualization.arrayToDataTable([
+		    ['Regions',	'Other Ethnic Groups',	'Black/African/Caribbean/Black British', 'Asian/Asian British',	'Mixed/Multiple Ethnic Groups', 'White'],
+			['England and Wales',	1,	3.3,	7.5,	2.2,	86],
+			['North East',	0.4,	0.5,	2.9,	0.9,	95.3],
+			['North West',	0.6,	1.4,	6.2,	1.6,	90.2],
+			['Yorkshire and the Humber',	0.8,	1.5,	7.3,	1.6,	88.8],
+			['East Midlands',	0.6,	1.8,	6.5,	1.9,	89.3],
+			['West Midlands',	0.9,	3.3,	10.8,	2.4	,82.7],
+			['East of England',	0.5,	2,	4.8,	1.9,	90.8],
+			['London',	3.4,	13.3,	18.5,	5,	59.8],
+			['South East',	0.6,	1.6,	5.2,	1.9,	90.7],
+			['South West',	0.3,	0.9,	2,	1.4,	95.4],
+			['Wales',	0.5,	0.6,	2.3,	1,	95.6]
+		]); 
+	    var data2 = google.visualization.arrayToDataTable([
+		    ['Ethnicity',	'Number',	'Percentage'],
+		    ['White',	5084000,	96],
+		    ['Scottish',	4446000,	84],
+		    ['Other British',	417000,	7.9],
+		    ['Irish',	54000,	1],
+		    ['Gypsy / Traveller',	4000,	0.1],
+		    ['Polish',	61000,	1.2],
+		    ['Other white ethnic group',	102000,	1.9],
+		    ['Mixed or multiple ethnic groups',	20000,	0.4],
+		    ['Asian, Asian Scottish or Asian British',	141000,	2.7],
+		    ['Pakistani, Pakistani Scottish or Pakistani British',	49000,	0.9],
+		    ['Indian, Indian Scottish or Indian British',	33000,	0.6],
+		    ['Bangladeshi, Bangladeshi Scottish or Bangladeshi British',	4000,	01],
+		    ['Chinese, Chinese Scottish or Chinese British',	34000,	0.6],
+		    ['Other',	21000,	0.4],
+		    ['African',	30000,	0.6],
+		    ['African, African Scottish or African British',	29000,	0.6],
+		    ['Other',	null,   	0],
+		    ['Caribbean or Black',	7000, 0.1],
+		    ['Caribbean, Caribbean Scottish or Caribbean British',	3000,	0.1],
+		    ['Black, Black Scottish or Black British',	2000,	0],
+		    ['Other',	1000,	0],
+		    ['Other ethnic group',	14000,	0.3],
+		    ['Arab, Arab Scottish or Arab British',	9000,	0.2],
+		    ['Other',	5000,	0.1]
+	    ]);
+			var data3 = google.visualization.arrayToDataTable([
+			['Ethnicity', 'Population'],
+			['White',	97.4%(1778449)],
+			['Chinese',	6303],
+			['Irish Traveller',	1301],
+			['Irish Traveller',	1284],
+			['Gypsy/Romany',	14],
+			['Other',	3],
+			['Indian',	6198],
+			['Pakistani',	1091],
+			['Bangladeshi',	540],
+			['Other Asian',	4998],
+			['Filipino',	2053],
+			['Other Asian, Asian unspecified',	1557],
+			['Arab',	274],
+			['Thai',	261],
+			['Malaysian',	192],
+			['Iranian',	151],
+			['Nepalese',	110],
+			['Other Middle East',	97],
+			['Japanese',	90],
+			['Korean',	88],
+			['Indonesian',	36],
+			['Vietnamese',	36],
+			['Kurdish',	20],
+			['Mixed Asian',	12],
+			['Tamil',	11],
+			['Burmese',	10],
+			['Black Caribbean',	372],
+			['Black African',	2345],
+			['Black Other',	899],
+			['Black Other',	886],
+			['Black British',	13],
+			['Mixed Ethnic Group',	6014],
+			['Other Mixed Ethnic',	3179],
+			['White Asian',	1653],
+			['White Black',	1128],
+			['Black Asian',	54],
+			['Other Ethnic Group',	2353],
+			['Other',	510],
+			['Irish',	273],
+			['Latin/South American',	191],
+			['North African',	166],
+			['European Mixed, European unspecified', 138],
+			['Other Western Europe',	135],
+			['Ulster-Scot',	119],
+			['Turkish',	117],
+			['Sri Lankan',	104],
+			['English/Welsh/Scottish/Northern Irish/ British',	67],
+			['Other Eastern Europe',	62],
+			['Polynesia/Micronesia/Melanesia',	51],
+			['African',	50],
+			['Caribbean',	47],
+			['Brazilian',	36],
+			['Baltic States', 32],
+			['Polish',	31],
+			['Jewish',	26],
+			['English',	21],
+			['Muslim',	21],
+			['Scottish',	20],
+			['Commonwealth of (Russian) Independent States',	19],
+			['Mixed Irish/ Other White',	19],
+			['Mexican',	17],
+			['Moroccan',	17],
+			['North American',	14],
+			['Afghan',	13],
+			['Northern Irish',	13],
+			['Australian/New Zealander',	12],
+			['Roma', 12]
+		]);		
+      var options1 = {
+      title: 'England and Wales Ethnicity 2011. Source of ONS (Office of National Statistics): - https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/articles/ethnicityandnationalidentityinenglandandwales/2012-12-11#ethnicity-in-england-and-wales',
+        chartArea: {width: '50%'},
+        isStacked: true,
+        hAxis: {
+          title: 'Percent',
+          minValue: 0,
+        },
+      };
+      var options2 = {
+      title: 'Scotland Ethncity 2011 in Percentages and numbers. Source of gov.scot: - https://www.gov.scot/Topics/People/Equality/Equalities/DataGrid/Ethnicity/EthPopMig',
+        chartArea: {width: '50%'},
+        isStacked: true,
+        hAxis: {
+          title: 'Amount of Persons',
+          minValue: 0,
+        },
+		sliceVisibilityThreshold: 0.00001,
+      };   
+	  var options3 = {
+        legend: 'true',
+        pieSliceText: 'label',
+        title: 'N.Ireland Ethnicity 2011 in numbers, because the percentage of white Northern Irish was over 97% you would be looking at a chart that had very small amounts of numbers but large amounts of ethnic groups in frequency, it was decided to show white Northern Irish as its amount and percentage reversed so it is represented as a small percentage so that the the graph was easily visible for non-white N.Irish. The percent is 97.4% so it was changed to a whole number of 97.4. Source of Northern Irish information service: - http://www.ninis2.nisra.gov.uk/Download/Census%202011_Excel/2011/QS201NI.xls',
+		/*pieHole: 0.4,*/
+        pieStartAngle: 190	,
+		sliceVisibilityThreshold: 0.00001,
+		is3D: false,
+		 pieSliceText: 'none',
+    legend: {
+      position: 'labeled',
+      textStyle: {
+        fontName: 'monospace',
+        fontSize: 9
+      }
+    },
+    pieSliceTextStyle: {
+      fontSize: 8
+    },
+    sliceVisibilityThreshold: 0,
+      };
+
+      var chart1 = new google.visualization.BarChart(document.getElementById('England_and_Wales'));
+      chart1.draw(data1, options1);
+      var chart2 = new google.visualization.PieChart(document.getElementById('Scotland'));
+      chart2.draw(data2, options2);
+	  var chart3 = new google.visualization.PieChart(document.getElementById('nireland'));
+      chart3.draw(data3, options3);
+    }
+    </script>
+ </body>
+</html>

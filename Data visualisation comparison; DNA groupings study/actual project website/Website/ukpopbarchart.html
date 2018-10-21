@@ -1,20 +1,21 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-  
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Google Maps APIs using DNA</title>
-    
 	
-	
-
-	<link href="style.css" rel="stylesheet">
-	
+    <title>UK Population Bar Chart</title>
+ 
+	<link href="css/style.css" rel="stylesheet">
+   </head>
+   <body>
     <div class="topnav">
 		<a class="active" href="index.html">Home</a>
 		<a href='ydna.html'>Y-DNA and Haplogroups</a>
+		<a href='ukr1haplogroup.html'>Bar Chart of R1b most common Haplogroup UK</a>
 		<a href='./markerstrial/index.html'>0-110 ad Settlers in the UK</a>
 		<a href='ukpopbarchart.html'>UK Population over History 43ad to 2017</a>
+		<a href='ukethnicity.html'>UK Ethnicity Modern Day</a>
 		<a href='viz2.html'>Europe Population Today</a>
 		<a href='tablejsondata.html'>Table of Modern Haplogroups Europe</a>
 		<a href='csvgraph.html'>World Populations Pie Chart</a>
@@ -46,9 +47,10 @@
 		<p>Source - Older History of the UK Populationhttp://www.localhistories.org/population.html</p>
 	</div>
 		
-</head>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-		<script type="text/javascript">
+
+
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+		<script>
       google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart);
 
@@ -76,8 +78,7 @@
         chart.draw(data, google.charts.Bar.convertOptions(options));
       }
     </script>
-  </head>
-  <body>
+
     <div id="barchart_material" style="width: 900px; height: 500px;"></div>
   </body>
 </html>

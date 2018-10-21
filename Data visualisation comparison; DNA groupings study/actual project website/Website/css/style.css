@@ -7,7 +7,13 @@ html, body {
 #map {
 	height: 100%;
 }
-<style>
+.font{
+
+font-family: helvetica;
+
+color: red;
+
+}
 .center {
     margin: auto;
     width: 60%;
@@ -19,7 +25,7 @@ html, body {
     text-align: center;
     border: 3px solid green;
 }
-</style>
+
 a {
 	text-decoration: none;
 }
@@ -94,3 +100,32 @@ body {
 	position:relative;
 	top:1px;
 }
+.ul {
+    margin: 20px;
+}
+
+.input-color {
+    position: relative;
+}
+.input-color input {
+    padding-left: 20px;
+}
+.input-color .color-box {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-color: #ccc;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+.axis {
+   font: 10px sans-serif;
+ }
+
+ .axis path,
+ .axis line {
+   fill: none;
+   stroke: #000;
+   shape-rendering: crispEdges;
+ }

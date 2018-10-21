@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	 <meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+     <title>Bar Chart Haplogroup</title>
+    
+	 <link href="css/style.css" rel="stylesheet">
+	</head>
+	<body>
+	 <script src="http://d3js.org/d3.v2.min.js"></script>
+	  <div class="topnav">
+		<a class="active" href="index.html">Home</a>
+		<a href='ydna.html'>Y-DNA and Haplogroups</a>
+		<a href='ukr1haplogroup.html'>Bar Chart of R1b most common Haplogroup UK</a>
+		<a href='./markerstrial/index.html'>0-110ad Settlers in the UK</a>
+		<a href='ukpopbarchart.html'>UK Population over History 43ad to 2017</a>
+		<a href='ukethnicity.html'>UK Ethnicity Modern Day</a>
+		<a href='viz2.html'>Europe Population Today</a>
+		<a href='tablejsondata.html'>Table of Modern Haplogroups Europe</a>
+		<a href='csvgraph.html'>World Populations Pie Chart</a>
+		<a href="https://datawrapper.dwcdn.net/a3tnj/2/">Countries involved in Haplogroup Study</a>
+		<a href="https://datawrapper.dwcdn.net/eBR0q/2/">UK Haplogroup, most common Haplogroup R1B</a>
+		<a href="https://datawrapper.dwcdn.net/wdlkC/3/">Countries Haplogroup Q</a>
+		<a href="https://datawrapper.dwcdn.net/3hIfN/3/">Countries Haplogroup N</a>
+		<a href="https://datawrapper.dwcdn.net/NvpzV/2/">Countries Haplogroup l1</a>
+		<a href="https://datawrapper.dwcdn.net/MmMqf/2/">Countries Haplogroup l2l2a</a>
+		<a href="https://datawrapper.dwcdn.net/RKZEt/2/">Countries Haplogroup l2b</a>
+		<a href="https://datawrapper.dwcdn.net/svq3J/1/">Countries Haplogroup r1a</a>
+		<a href="https://datawrapper.dwcdn.net/67Hbd/1/">Countries Haplogroup r1b</a>
+		<a href="https://datawrapper.dwcdn.net/ZnD9Z/2/">Countries Haplogroup G</a>
+		<a href="https://datawrapper.dwcdn.net/Ty3LH/2/">Countries Haplogroup J2</a>
+		<a href="https://datawrapper.dwcdn.net/lOkmQ/1/">Countries Haplogroup JJ1</a>
+		<a href="https://datawrapper.dwcdn.net/YO4ow/1/">Countries Haplogroup E1B1</a>
+		<a href="https://datawrapper.dwcdn.net/rxmWv/1/">Countries Haplogroup T</a>
+	</div>
+
+	 
+	 <div style="padding-left:5px">
+		<h1><u>UK and Ireland DNA Haplogroup Y-DNA R1b</u></h1>
+		<h3>Bar Chart of most popular Haplogroup in the UK between countries and counties covered</h3>
+		<p>Bar Chart shows amount of R1b out of around 100% of all DNA Haplogroups tested, source data Europedia  DNA site - https://www.eupedia.com/genetics/britain_ireland_dna.shtml</p>
+		<p>R1b is most common in the UK and Ireland. The highest amounts are found in southern Ireland (ROI, EIRE). With the Celtic regions in the UK (Wales, Scotland and N.Ireland) having more proportionally  
+		than England which has more Germanic and Nordic DNA also with Briton Celtic DNA. On the page that shows the UK R1b on a map it was not possible to add the R1b data to N.Ireland, but we should use this chart as degree of accuracy to that region.</p>
+		<p>The areas we can see in England that have quite a bit less  R1b than the rest of England is primarily where the Anglo-Saxon-Jutes-Frisian (North Germanic) and Nordic (Vikings from Denmark and Norway) tribes settled.</p>
+	 </div>
+    <div id="chart"></div>
+   
+	<style>
+		body {
+		width: 600px;
+		margin: 20px auto;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 300;
+		font-size: 11px;
+	}
+	.axis line,
+	.axis path {
+		fill: none;
+		stroke: #000;
+		shape-rendering: crispEdges;
+	}
+	.axis--x line{
+		display: none;
+	}
+	.axis--x path {
+		display: none;
+	}
+	.axis--y path {
+		display: none;
+	}
+	h1, h3 {
+		text-align: center;
+	}
+	div.tooltip {   
+		position: absolute;           
+		text-align: left;           
+		width: auto;                  
+		height: auto;                 
+		padding: 8px;             
+		font: 12px sans-serif;        
+		background: black;   
+		border-radius: 0px;           
+		pointer-events: none;  
+		color: white;       
+	}
+	.mean {
+		stroke-width: 1px;
+		stroke: red;
+	}
+	</style>
+
+    <script>
+		function renderChart() {
+
+		var data = d3.csv.parse(d3.select('#csv').text());
+		var valueLabelWidth = 40; // space reserved for value labels (right)
+		var barHeight = 20; // height of one bar
+		var barLabelWidth = 100; // space reserved for bar labels
+		var barLabelPadding = 5; // padding between bar and bar labels (left)
+		var gridLabelHeight = 18; // space reserved for gridline labels
+		var gridChartOffset = 3; // space between start of grid and first bar
+		var maxBarWidth = 420; // width of the bar with the max value
+		 
+		// accessor functions 
+		var barLabel = function(d) { return d['Region/Haplogroup']; };
+		var barValue = function(d) { return parseFloat(d['R1b']); };
+		 
+		// scales
+		var yScale = d3.scale.ordinal().domain(d3.range(0, data.length)).rangeBands([0, data.length * barHeight]);
+		var y = function(d, i) { return yScale(i); };
+		var yText = function(d, i) { return y(d, i) + yScale.rangeBand() / 2; };
+		var x = d3.scale.linear().domain([0, d3.max(data, barValue)]).range([0, maxBarWidth]);
+		// svg container element
+		var chart = d3.select('#chart').append("svg")
+		  .attr('width', maxBarWidth + barLabelWidth + valueLabelWidth)
+		  .attr('height', gridLabelHeight + gridChartOffset + data.length * barHeight);
+		// grid line labels
+		var gridContainer = chart.append('g')
+		  .attr('transform', 'translate(' + barLabelWidth + ',' + gridLabelHeight + ')'); 
+		gridContainer.selectAll("text").data(x.ticks(10)).enter().append("text")
+		  .attr("x", x)
+		  .attr("dy", -3)
+		  .attr("text-anchor", "middle")
+		  .text(String);
+		// vertical grid lines
+		gridContainer.selectAll("line").data(x.ticks(10)).enter().append("line")
+		  .attr("x1", x)
+		  .attr("x2", x)
+		  .attr("y1", 0)
+		  .attr("y2", yScale.rangeExtent()[1] + gridChartOffset)
+		  .style("stroke", "#ccc");
+		// bar labels
+		var labelsContainer = chart.append('g')
+		  .attr('transform', 'translate(' + (barLabelWidth - barLabelPadding) + ',' + (gridLabelHeight + gridChartOffset) + ')'); 
+		labelsContainer.selectAll('text').data(data).enter().append('text')
+		  .attr('y', yText)
+		  .attr('stroke', 'none')
+		  .attr('fill', 'black')
+		  .attr("dy", ".35em") // vertical-align: middle
+		  .attr('text-anchor', 'end')
+		  .text(barLabel);
+		// bars
+		var barsContainer = chart.append('g')
+		  .attr('transform', 'translate(' + barLabelWidth + ',' + (gridLabelHeight + gridChartOffset) + ')'); 
+		barsContainer.selectAll("rect").data(data).enter().append("rect")
+		  .attr('y', y)
+		  .attr('height', yScale.rangeBand())
+		  .attr('width', function(d) { return x(barValue(d)); })
+		  .attr('stroke', 'white')
+		  .attr('fill', 'steelblue');
+		// bar value labels
+		barsContainer.selectAll("text").data(data).enter().append("text")
+		  .attr("x", function(d) { return x(barValue(d)); })
+		  .attr("y", yText)
+		  .attr("dx", 3) // padding-left
+		  .attr("dy", ".35em") // vertical-align: middle
+		  .attr("text-anchor", "start") // text-align: right
+		  .attr("fill", "black")
+		  .attr("stroke", "none")
+		  .text(function(d) { return d3.round(barValue(d), 2); });
+		// start line
+		barsContainer.append("line")
+		  .attr("y1", -gridChartOffset)
+		  .attr("y2", yScale.rangeExtent()[1] + gridChartOffset)
+		  .style("stroke", "#000");
+
+		}
+	</script>
+	<script id="csv" type="text/csv">Region/Haplogroup,I1,I2a1,I2a2,R1a,R1b,G,J2,J1,E1b,T,Q,Sample size
+				England,14,2.5,4.5,4.5,67,1.5,3.5,0,2,0.5,0.5,> 5000
+				C/shire & Lan/shire,15.5,0,7.5,2.5,69.5,0.5,1,0,2.5,0.5,0.5,301
+				Cornwall & Devon,8,1.5,3.5,4,75.5,2.5,2,0.5,1.5,0.5,0,375
+				Cumbria,12,1,2.5,6,70,0,1.5,0,6,0,0,117
+				East Anglia,19.5,2.5,8,5,56.5,4,1,0.5,3,0,0,466
+				East Midlands,16,1,5,4,63,1,4.5,1,4.5,0,0,200
+				Home Counties,10.5,1,4.5,3.5,68,1.5,2.5,0.5,3.5,0.5,0.5,420
+				Northeast England,14.5,0.5,4,5,65,3,2,1,1.5,0,1,286
+				Southwest England,15,1.5,4,5,72,2,3,0.5,3,0.5,0.5,357
+				West Midlands,17.5,0.5,4,3,66,1.5,2.5,0,3,0,0,190
+				Ireland,6,1,5,2.5,81,1,1,0,2,0,0,> 5000
+				Ulster,9,0.5,10,1.5,76.5,0,1.5,0,0,0,0.5,140
+				Scotland,9,1,4,8.5,72.5,0.5,2,0,1.5,0.5,0.5,> 5000
+				Northeast Scotland,13,4,6.5,4,69.5,0,2.5,0,0,0,0,76
+				Southern Scotland,19.5,1.5,11,3.5,57,1.5,1.5,1,3.5,0,0,118
+				Western Scotland,8.5,2.5,6.5,7.5,72,0,0.5,0,1.5,0,0,183
+				Orkney,10.5,1,2,22.5,62,0,0,0,0,1,0,159
+				Shetland,13.5,0,0.5,15.5,68.5,0,0,0,0,0.5,1,197
+				Wales,12,1,3,1,74,2.5,0.5,0,4,1,0,411
+				</script>
+    <script>renderChart();</script>
+		<p>↓↓↓Source for PNG UK Haplogroup Picture Map of Y-DNA UK: - www.europedia.com↓↓↓</p>
+		<img src="media/UKmaps.png" alt="UK Haplogroup">
+		<p>↑↑↑Source for PNG UK Haplogroup Picture Map of Y-DNA UK: - www.europedia.com↑↑↑</p>
+  </body>
+</html>

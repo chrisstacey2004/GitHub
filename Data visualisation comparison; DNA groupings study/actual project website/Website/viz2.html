@@ -1,13 +1,20 @@
- <html>
+<!DOCTYPE html> 
+<html lang="en">
   <head>
-	<link href="style.css" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Europe Population Today</title>
+	<link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	
+  </head>
+  <body>
 	<div class="topnav">
 		<a class="active" href='./index.html'>Home</a>
 		<a href='ydna.html'>Y-DNA and Haplogroups</a>
-		<a href="./markerstrial/index.html">0-110ad Settlers in the UK</a></a>
+		<a href='ukr1haplogroup.html'>Bar Chart of R1b most common Haplogroup UK</a>
+		<a href="./markerstrial/index.html">0-110ad Settlers in the UK</a>
 		<a href='./ukpopbarchart.html'>UK Population over History 43ad to 2017</a>
+		<a href='./ukethnicity.html'>UK Ethnicity Modern Day</a>
 		<a href='./viz2.html'>Europe Population Today</a>
 		<a href='./tablejsondata.html'>Table of Modern Haplogroups Europe</a>
 		<a href='./csvgraph.html'>World Populations Pie Chart</a>
@@ -33,11 +40,11 @@
 		<h3><u>Map Of Countries European Populations, Most Recent Figures</u></h3>
 		<p>Source of Data, https://github.com/samayo/country-json/blob/master/src/country-by-population.json. Date data added to Github, July 19th 2018.</p>
 		<p>Data Sourced From JSON, Cleaned Up For Google Charts.</P>
-		<p> Data Source for UK 2018, ONS, 
+		<p> Data Source for UK 2018, ONS, https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/bulletins/annualmidyearpopulationestimates/mid2017</p>
 	</div>
 	
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
 	
 	
       google.charts.load('current', {
@@ -50,68 +57,67 @@
 
       function drawRegionsMap() {
         var data = google.visualization.arrayToDataTable([
-          ['Country', 'population 2018', ],
-    ['Albania', 3401200],
-    ['Austria', 8091800],
-    ['Belarus', 10236000],
-    ['Belgium', 10239000],
-    ['Bosnia and Herzegovina', 3972000],
-	['Bulgaria', 8190900],
-	['Croatia', 4473000],
-	['Cyprus', 754700],
-	['Czech Republic',  10278100],
-	['Denmark', 5330000],
-	/*['England', null],    */
-    ['Estonia', 1439200],
-    ['Finland', 5171300],
-    ['France', 59225700],
-	['Germany', 82164700],
-	['Gibraltar', 25000],
-	['Greece', 10545700],
-	['Holy See (Vatican City State)', 1000],
-	['Hungary', 10043200],
-	['Iceland', 279000],
-	['Ireland', 3775100],
-	['Italy', 57680000],
-	['Latvia', 2424200],
-	['Liechtenstein', 32300],
-	['Lithuania', 3698500],
-	['Luxembourg', 435700],
-	['Macedonia', 2024000],
-	['Malta', 380200],
-	['Moldova', 4380000],
-	['Monaco', 34000],
-	/*['Northern Ireland', null],   */
-    ['Netherlands', 15864000],
-	['Norway', 4478500],
-	['Poland', 38653600],
-	['Portugal', 9997600],
-	['Romania', 22455500],
-	['RU', 146934000],
-	['San Marino', 27000],
-	/*['Scotland', null],  */
-	['Slovakia', 5398700],
-	['Slovenia', 1987800],
-	['Spain', 39441700],
-	['Sweden', 8861400],
-	['Switzerland',7160400],
-	['Turkey', 66591000],
-	['Ukraine', 50456000],
-	['GB', 66040200],
-	/*['Wales', null],   */
-	['Yugoslavia', 10640000]
-    
-]);
+			['Country', 'population 2018', ],
+			['Albania', 3401200],
+			['Austria', 8091800],
+			['Belarus', 10236000],
+			['Belgium', 10239000],
+			['Bosnia and Herzegovina', 3972000],
+			['Bulgaria', 8190900],
+			['Croatia', 4473000],
+			['Cyprus', 754700],
+			['Czech Republic',  10278100],
+			['Denmark', 5330000],
+			/*['England', null],    */
+			['Estonia', 1439200],
+			['Finland', 5171300],
+			['France', 59225700],
+			['Germany', 82164700],
+			['Gibraltar', 25000],
+			['Greece', 10545700],
+			['Holy See (Vatican City State)', 1000],
+			['Hungary', 10043200],
+			['Iceland', 279000],
+			['Ireland', 3775100],
+			['Italy', 57680000],
+			['Latvia', 2424200],
+			['Liechtenstein', 32300],
+			['Lithuania', 3698500],
+			['Luxembourg', 435700],
+			['Macedonia', 2024000],
+			['Malta', 380200],
+			['Moldova', 4380000],
+			['Monaco', 34000],
+			/*['Northern Ireland', null],   */
+			['Netherlands', 15864000],
+			['Norway', 4478500],
+			['Poland', 38653600],
+			['Portugal', 9997600],
+			['Romania', 22455500],
+			['RU', 146934000],
+			['San Marino', 27000],
+			/*['Scotland', null],  */
+			['Slovakia', 5398700],
+			['Slovenia', 1987800],
+			['Spain', 39441700],
+			['Sweden', 8861400],
+			['Switzerland',7160400],
+			['Turkey', 66591000],
+			['Ukraine', 50456000],
+			['GB', 66040200],
+			/*['Wales', null],   */
+			['Yugoslavia', 10640000]
+			
+			]);
 		  
         var options = {};
 
         var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
 
         chart.draw(data, options);
-      }
-    </script>
-  </head>
-  <body>
-    <div id="regions_div" style="width: 100%; height: 100%";></div>
-	</body>
+		}
+		</script>
+
+		<div id="regions_div" style="width: 100%; height: 100%"> </div>
+    </body>
 </html>
