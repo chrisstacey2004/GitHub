@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_QRIBYNUnEeizguq3U1nGsA" name="model">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_Qd_YsNUnEeizguq3U1nGsA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_ihv5ENUnEeizguq3U1nGsA" name="Website DNA">
+    <packagedElement xmi:type="uml:Component" xmi:id="_ms_KcNUnEeizguq3U1nGsA" name="index.html">
+      <generalization xmi:type="uml:Generalization" xmi:id="_OVMjYNUrEeizguq3U1nGsA" general="_Jav4ENUqEeizguq3U1nGsA"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_h-ovgNUoEeizguq3U1nGsA" name="index.html uses script.js for dynamic functionaility" client="_ms_KcNUnEeizguq3U1nGsA" supplier="_u4t1wNUnEeizguq3U1nGsA"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_puaeoNUoEeizguq3U1nGsA" name="index.html uses css for style" client="_ms_KcNUnEeizguq3U1nGsA" supplier="_tlyOQNUnEeizguq3U1nGsA"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_Ko_CQNUpEeizguq3U1nGsA" name="uses pngs" client="_ms_KcNUnEeizguq3U1nGsA" supplier="_G60HYNUpEeizguq3U1nGsA"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_lAVUANUqEeizguq3U1nGsA" name="Website/index.html opens markerstrial/index.html" client="_ms_KcNUnEeizguq3U1nGsA" supplier="_Jav4ENUqEeizguq3U1nGsA"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_UrJ_4NUrEeizguq3U1nGsA" name="uses json, csv, geojson" client="_ms_KcNUnEeizguq3U1nGsA" supplier="_R39fgNUrEeizguq3U1nGsA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_tlyOQNUnEeizguq3U1nGsA" name="css"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_u4t1wNUnEeizguq3U1nGsA" name="script.js"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_LZqtwNUoEeizguq3U1nGsA" name="csvgraph.html">
+      <generalization xmi:type="uml:Generalization" xmi:id="_7Tj68NUpEeizguq3U1nGsA" general="_ms_KcNUnEeizguq3U1nGsA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_w02V0NUoEeizguq3U1nGsA" name="ukpopchart.html">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ACV-QNUqEeizguq3U1nGsA" general="_ms_KcNUnEeizguq3U1nGsA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_yJiQ0NUoEeizguq3U1nGsA" name="tablejsondata.html">
+      <generalization xmi:type="uml:Generalization" xmi:id="_6WyJoNUpEeizguq3U1nGsA" general="_ms_KcNUnEeizguq3U1nGsA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_y3x24NUoEeizguq3U1nGsA" name="ukr1haplogroup.html">
+      <generalization xmi:type="uml:Generalization" xmi:id="__XCXcNUpEeizguq3U1nGsA" general="_ms_KcNUnEeizguq3U1nGsA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_zmWNENUoEeizguq3U1nGsA" name="ukethnicity.html">
+      <generalization xmi:type="uml:Generalization" xmi:id="_tfK-ANUpEeizguq3U1nGsA" general="_ms_KcNUnEeizguq3U1nGsA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_0Jum8NUoEeizguq3U1nGsA" name="viz2.html">
+      <generalization xmi:type="uml:Generalization" xmi:id="_9tC60NUpEeizguq3U1nGsA" general="_ms_KcNUnEeizguq3U1nGsA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_6sjawNUoEeizguq3U1nGsA" name="markerstrial">
+      <packagedElement xmi:type="uml:Component" xmi:id="_Jav4ENUqEeizguq3U1nGsA" name="index.html">
+        <packagedElement xmi:type="uml:Usage" xmi:id="_wEjPYNUqEeizguq3U1nGsA" name="index.html uses script.js" client="_Jav4ENUqEeizguq3U1nGsA" supplier="_sL-bUNUqEeizguq3U1nGsA"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_y-bmkNUqEeizguq3U1nGsA" name="index.html uses script.js" client="_Jav4ENUqEeizguq3U1nGsA" supplier="_tzDt4NUqEeizguq3U1nGsA"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_BUpeMNUrEeizguq3U1nGsA" name="uses pngs" client="_Jav4ENUqEeizguq3U1nGsA" supplier="_6viycNUqEeizguq3U1nGsA"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_ZLW0oNUrEeizguq3U1nGsA" name="uses json, csv and geojson" client="_Jav4ENUqEeizguq3U1nGsA" supplier="_R39fgNUrEeizguq3U1nGsA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Component" xmi:id="_VthRQNUqEeizguq3U1nGsA" name="ukeuropednamap">
+        <generalization xmi:type="uml:Generalization" xmi:id="_YGD18NUqEeizguq3U1nGsA" general="_Jav4ENUqEeizguq3U1nGsA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Component" xmi:id="_sL-bUNUqEeizguq3U1nGsA" name="css"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_tzDt4NUqEeizguq3U1nGsA" name="script"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_6viycNUqEeizguq3U1nGsA" name="media"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_G60HYNUpEeizguq3U1nGsA" name="media"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_l2YAoNUpEeizguq3U1nGsA" name="ydna.html">
+      <generalization xmi:type="uml:Generalization" xmi:id="_8W0uwNUpEeizguq3U1nGsA" general="_ms_KcNUnEeizguq3U1nGsA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_R39fgNUrEeizguq3U1nGsA" name="data"/>
+  </packagedElement>
+</uml:Model>
